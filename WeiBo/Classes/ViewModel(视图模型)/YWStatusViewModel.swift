@@ -90,8 +90,9 @@ class YWStatusViewModel: CustomStringConvertible{
         let retweetedFont = UIFont.systemFont(ofSize: 14)
         
         //被转发微博的文字
-        let rText = "@" + (model.retweeted_status?.user?.screen_name ?? "") + ":" + (model.retweeted_status?.text ?? "")
-        retweededAttrText = YWEmoticonManager.shared.emoticonString(string:rText, font:retweetedFont)
+        let rText1 = "@" + (model.retweeted_status?.user?.screen_name ?? "")
+        let rText2 = ":" + (model.retweeted_status?.text ?? "")
+        retweededAttrText = YWEmoticonManager.shared.emoticonString(string:rText1+rText2, font:retweetedFont)
         
         //微博正文属性文本
         statusAttrText = YWEmoticonManager.shared.emoticonString(string:model.text ?? "", font:originalFont)
